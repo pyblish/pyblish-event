@@ -1,0 +1,68 @@
+<html ng-app="pyblishApp">
+	<head>
+		<meta charset="utf-8">
+		<title>Pyblish App</title>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular-route.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<script>
+
+			// Establish routes
+			var pyblishApp = angular.module('pyblishApp', ['ngRoute']);
+			pyblishApp.config(function($routeProvider) {
+				$routeProvider.
+					when('/', {
+						templateUrl: 'publish-list.html',
+						controller: 'PublishListCtrl'
+					}).
+					when('/:publishName', {
+						templateUrl: 'publish-detail.html',
+						controller: 'PublishDetailCtrl'
+					}).
+					otherwise({
+						redirectTo: '/'
+					});
+			})
+
+			// Load JSON and cache its results
+			pyblishApp.factory('publishes', function($http) {
+				function getData(callback){
+					$http({
+						method: 'GET',
+						url: 'publishes.json',
+						cache: true
+					}).success(callback);
+				}
+
+				return {
+					list: getData,
+					find: function(name, callback){
+						getData(function(data) {
+							var publish = data.filter(function(entry){
+								return entry.name == name;
+							})[0];
+							callback(publish);
+						});
+					}
+				};
+			})
+
+			// Controllers for the two routes
+			pyblishApp.controller('PublishListCtrl', function ($scope, $http, publishes){
+				publishes.list(function(publishes) {
+					$scope.publishes = publishes;
+				});
+			});
+
+			pyblishApp.controller('PublishDetailCtrl', function ($scope, $routeParams, publishes) {
+				publishes.find($routeParams.publishName, function(publish) {
+					$scope.publish = publish;
+				});
+			});
+
+		</script>
+	</head>
+	<body ng-controller="PublishListCtrl">
+		<div ng-view></div>
+	</body>
+</html>

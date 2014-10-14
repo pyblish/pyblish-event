@@ -1,0 +1,45 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:300, 400, 600, 700, 300italic, 700italic")
+
+$fade-speed: 200ms
+
+*
+    font: 400 0.875em/1.58 Lato, "Helvetica Neue", Helvetica, Arial, sans-serif
+    font-size: 15px
+    color: rgb(70, 70, 70)
+    letter-spacing: 0.03em
+
+    -webkit-transition-property: color
+    -webkit-transition-duration: $fade-speed        
+    -moz-transition-property: color
+    -moz-transition-duration: $fade-speed
+    -o-transition-property: color
+    -o-transition-duration: $fade-speed
+    transition-property: color
+    transition-duration: $fade-speed
+
+    &:hover
+        color: rgb(0, 0, 0)
+
+.container
+    width: 500px
+    margin-left: auto
+    margin-right: auto
+
+    div
+        -webkit-transition-property: background-color
+        -webkit-transition-duration: $fade-speed        
+        -moz-transition-property: background-color
+        -moz-transition-duration: $fade-speed
+        -o-transition-property: background-color
+        -o-transition-duration: $fade-speed
+        transition-property: background-color
+        transition-duration: $fade-speed
+
+        background-color: rgb(240, 240, 240)
+        height: 50px
+        margin: 5px
+        border-radius: 5px
+        text-align: center
+
+        &:hover
+            background-color: rgb(245, 245, 245)
