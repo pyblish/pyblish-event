@@ -1,0 +1,72 @@
+<html ng-app="app">
+  <head>
+    <meta charset="utf-8">
+    <title>Angular.js Example</title>
+    <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.1/angular.min.js"></script>
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/socket.io/0.9.16/socket.io.min.js"></script>
+    <script>
+
+      var app = angular.module('app', []);
+
+      // Wrap socket in AngularJS Service, so as to use
+      // it within our controller.
+      app.factory('socket', function ($rootScope) {
+        var socket = io.connect();
+        return {
+          on: function (eventName, callback) {
+            socket.on(eventName, function () {  
+              var args = arguments;
+              $rootScope.$apply(function () {
+                callback.apply(socket, args);
+              });
+            });
+          },
+          emit: function (eventName, data, callback) {
+            socket.emit(eventName, data, function () {
+              var args = arguments;
+              $rootScope.$apply(function () {
+                if (callback) {
+                  callback.apply(socket, args);
+                }
+              });
+            })
+          }
+        };
+      });
+
+      app.controller('NameCtrl', function ($scope, socket){
+        $scope.firstName = 'John';
+        $scope.lastName = 'Smith';
+
+        socket.on('background', function(value) {
+          console.log(value);
+        });
+
+        socket.on('to client', function(name) {
+          console.log("Got first name: " + name);
+          // $('input#firstName').val('');
+          $scope.firstName = name;
+        });
+
+        $('form#firstNameForm').submit(function(e) {
+          socket.emit('first name to server', $('input#firstName').val());
+          return false;
+        });
+
+      });
+
+    </script>
+  </head>
+  <body ng-controller="NameCtrl">
+    <form id="firstNameForm" method='POST' action='#'>
+      First name:<input ng-model="firstName" type="text" placeholder="Message" id="firstName"/>
+    </form>
+    <form id="lastNameForm" method='POST' action='#'>
+      Last name:<input ng-model="lastName" type="text" id="lastName"/>
+    </form>
+
+    Hello {{firstName | angular}} {{lastName | angular}}
+
+  </body>
+</html>

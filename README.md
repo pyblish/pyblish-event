@@ -1,13 +1,30 @@
+![](images/connections2.png)
+
 ## Pyblish Event
 
 An intranet frontend for real-time updates of Pyblish events.
 
-### Usage
+### How to Get Started
 
-In the `/app` directory, from a terminal, run:
+1. Clone this repo
 
-```bash
-$ python -m SimpleHTTPServer 8888
+ ```bash
+$ git clone https://github.com/pyblish/pyblish-event.git
 ```
 
-Then browse to [http://localhost:8888](http://localhost:8888)
+2. Install dependencies (best done within a virtual environment)
+
+ ```bash
+$ cd pyblish-event
+$ pip install -r requirements.txt
+```
+
+3. Run the app
+
+ ```bash
+$ python runserver.py
+```
+
+4. Browse to app
+
+ > [http://localhost:5000](http://localhost:5000)

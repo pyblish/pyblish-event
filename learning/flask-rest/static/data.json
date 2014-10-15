@@ -1,0 +1,29 @@
+[
+    {
+        "name": "Peter01",
+        "type": "publish",
+        "source": "c:\\some\\source\\file.mb",
+        "date": "2014-10-13 15:56:10",
+        "author": "Marcus Ottosson",
+        "host": "Autodesk Maya 2015x64 SP2",
+        "machine": "alienfx"
+    },
+    {
+        "name": "Peter02",
+        "type": "publish",
+        "source": "c:\\some\\source\\file.mb",
+        "date": "2014-10-13 15:56:11",
+        "author": "Marcus Ottosson",
+        "host": "Autodesk Maya 2015x64 SP2",
+        "machine": "alienfx"
+    },
+    {
+        "name": "Peter03",
+        "type": "publish",
+        "source": "c:\\some\\source\\file.mb",
+        "date": "2014-10-13 15:56:16",
+        "author": "Marcus Ottosson",
+        "host": "Autodesk Maya 2015x64 SP2",
+        "machine": "alienfx"
+    }
+]

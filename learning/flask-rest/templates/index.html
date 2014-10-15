@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div id="events">
+{% for publish in published %}
+
+  	<div class="event">
+  		<a href="/event/{{publish['name']}}">
+  			{{ publish['name'] }}
+  		</a>
+  	</div>
+
+{% endfor %}
+</div>
+
+{% endblock %}

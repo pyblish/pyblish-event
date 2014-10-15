@@ -1,0 +1,39 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:300, 400, 600, 700, 300italic, 700italic");
+h1 {
+  border-bottom: 2px solid #f0f0f0; }
+
+html {
+  font: 400 0.875em/1.58 Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #aa4646;
+  letter-spacing: 0.03em; }
+
+a {
+  -webkit-transition-property: color;
+  -webkit-transition-duration: 200ms;
+  -moz-transition-property: color;
+  -moz-transition-duration: 200ms;
+  -o-transition-property: color;
+  -o-transition-duration: 200ms;
+  transition-property: color;
+  transition-duration: 200ms;
+  color: #aa4646; }
+  a:hover {
+    color: #622828; }
+  a:link {
+    text-decoration: none; }
+  a:visited {
+    background-color: black; }
+
+table {
+  width: 100%;
+  border-collapse: collapse; }
+  table th {
+    height: 30px;
+    background-color: #f4e7e7;
+    text-align: left;
+    padding-right: 100px; }
+
+.container {
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto; }
