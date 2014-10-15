@@ -15,23 +15,28 @@ socket = flask.ext.socketio.SocketIO(app)
 thread = None
 
 package_dir = os.path.dirname(__file__)
-with open(os.path.join(package_dir, 'static', 'data.json')) as f:
+data_path = os.path.join(package_dir, 'static', 'data.json')
+with open(data_path) as f:
     data = json.load(f)
 
 
 class Api(flask.ext.restful.Resource):
     def get(self):
-        return data
+        """Return all current events"""
+        return [k['name'] for k in data]
 
     def put(self):
+        """Add new event"""
         name = flask.request.form['name']
         new_data = {'name': name,
                     "type": "publish",
                     "source": sys.executable,
                     "date": time.ctime()}
 
-        # Add to persistent datastore
+        # Persist data, in-memory and on-disk
         data.append(new_data)
+        with open(data_path, 'w') as f:
+            json.dump(data, f, indent=4)
 
         # Push to clients
         socket.emit("event",
@@ -44,7 +49,7 @@ api.add_resource(Api, '/api')
 
 @app.route("/")
 def index():
-    sorted_data = sorted(data, key=lambda k: k['date'])
+    sorted_data = sorted(data, key=lambda k: k['date'], reverse=True)
     return flask.render_template('index.html', published=sorted_data)
 
 
@@ -60,4 +65,3 @@ def details(name):
 @socket.on("connect", namespace="/test")
 def test_connect():
     flask.ext.socketio.emit("connected", {"data": "Connected", "count": 0})
-

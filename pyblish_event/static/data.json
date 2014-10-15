@@ -1,29 +1,35 @@
 [
     {
-        "name": "Peter01",
-        "type": "publish",
-        "source": "c:\\some\\source\\file.mb",
-        "date": "2014-10-13 15:56:10",
-        "author": "Marcus Ottosson",
-        "host": "Autodesk Maya 2015x64 SP2",
-        "machine": "alienfx"
-    },
+        "name": "Peter01", 
+        "author": "Marcus Ottosson", 
+        "machine": "alienfx", 
+        "source": "c:\\some\\source\\file.mb", 
+        "host": "Autodesk Maya 2015x64 SP2", 
+        "date": "2014-10-13 15:56:10", 
+        "type": "publish"
+    }, 
     {
-        "name": "Peter-model",
-        "type": "publish",
-        "source": "c:\\some\\source\\file.mb",
-        "date": "2014-10-13 15:56:11",
-        "author": "Marcus Ottosson",
-        "host": "Autodesk Maya 2015x64 SP2",
-        "machine": "alienfx"
-    },
+        "name": "Peter-model", 
+        "author": "Marcus Ottosson", 
+        "machine": "alienfx", 
+        "source": "c:\\some\\source\\file.mb", 
+        "host": "Autodesk Maya 2015x64 SP2", 
+        "date": "2014-10-13 15:56:11", 
+        "type": "publish"
+    }, 
     {
-        "name": "MechanizedVillain06",
-        "type": "publish",
-        "source": "c:\\some\\source\\file.mb",
-        "date": "2014-10-13 15:56:16",
-        "author": "Marcus Ottosson",
-        "host": "Autodesk Maya 2015x64 SP2",
-        "machine": "alienfx"
+        "name": "MechanizedVillain06", 
+        "author": "Marcus Ottosson", 
+        "machine": "alienfx", 
+        "source": "c:\\some\\source\\file.mb", 
+        "host": "Autodesk Maya 2015x64 SP2", 
+        "date": "2014-10-13 15:56:16", 
+        "type": "publish"
+    }, 
+    {
+        "date": "Wed Oct 15 18:20:19 2014", 
+        "source": "/home/marcus/pyblish-event/bin/python", 
+        "type": "publish", 
+        "name": "Lucas02"
     }
 ]
