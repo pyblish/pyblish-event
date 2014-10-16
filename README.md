@@ -1,4 +1,4 @@
-![](images/event.gif)
+![](https://github.com/pyblish/pyblish-event/wiki/images/event.gif)
 
 ## Pyblish Event
 
