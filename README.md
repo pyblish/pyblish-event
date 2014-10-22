@@ -1,4 +1,4 @@
-![](https://github.com/pyblish/pyblish-event/wiki/images/event.gif)
+![](https://github.com/pyblish/pyblish-event/wiki/images/event2.gif)
 
 ## Pyblish Event
 
@@ -22,7 +22,7 @@ $ pip install -r requirements.txt
 3. Run the app
 
  ```bash
-$ python runserver.py
+$ python run.py
 ```
 
 4. Browse to app
@@ -40,19 +40,25 @@ Get all events
 ```bash
 $ curl http://localhost:5000/api -X GET
 [
-    "Peter01", 
-    "Peter-model", 
-    "MechanizedVillain06"
+    {
+        "content": "Wed Oct 22 17:28:09 2014", 
+        "title": "Mackan06"
+    }, 
+    {
+        "content": "Wed Oct 22 17:28:32 2014", 
+        "title": "Panzar12 was published, without errors"
+    }
 ]
+
 
 ```
 
-##### PUT
+##### POST
 
-Add an event
+Add an event, get ID in return.
 
 ```bash
-$ curl http://localhost:5000/api -d "name=EventName01" -X PUT
+$ curl http://localhost:5000/api -d "event=EventName01" -X POST
 ```
 
 Clients will update in real-time and events persist across sessions.
