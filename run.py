@@ -1,2 +1,2 @@
-from pyblish_event import app
-app.run(debug=True)
+from pyblish_event import app, socket
+socket.run(app)

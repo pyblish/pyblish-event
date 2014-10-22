@@ -10,7 +10,7 @@ contacts = db.contacts
 excludes = {"_id": False}
 
 
-class ApiContact(flask.ext.restful.Resource):
+class ApiEvent(flask.ext.restful.Resource):
     def get(self):
         return list(contacts.find(fields=excludes))
 
@@ -25,7 +25,7 @@ class ApiContact(flask.ext.restful.Resource):
         contacts.insert(contact_json)
 
 
-class ApiContactId(flask.ext.restful.Resource):
+class ApiEventId(flask.ext.restful.Resource):
     def get(self, id):
         return contacts.find_one({"id": int(id)},
                                  fields=excludes)

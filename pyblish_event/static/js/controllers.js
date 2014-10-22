@@ -7,19 +7,17 @@
 * @param {Service} searchModel - Used for communicating between
 *       Navigation and list
 */
-function ListCtrl(searchModel) {
-    this.model = searchModel;
+function ListCtrl(searchModel, socket) {
+    // this.model.events = [];
 
-    this.model.groups = [
-        {
-            title: "Peter01",
-            content: "Peter01 was published just now"
-        },
-        {
-            title: "Marcus04",
-            content: "Marcus04 was published 6 mins ago"
-        }
-    ];
+    socket.on("connected", function (data) {
+        // Initialise with data from server
+        console.log("Someone connected: " + data.whois);
+        console.log("And set events: " + data.events);
+        searchModel.events = data.events;
+    });
+
+    this.model = searchModel;
 }
 
 
@@ -27,13 +25,15 @@ function ListCtrl(searchModel) {
 * Handle navigation and search
 *
 */
-function NavCtrl(searchModel) {
+function NavCtrl(searchModel, socket) {
     this.model = searchModel;
+    this.socket = socket;
 }
 
 
 NavCtrl.prototype.search = function (query) {
     this.model.updateQuery(query);
+    this.socket.emit(query);
 };
 
 
