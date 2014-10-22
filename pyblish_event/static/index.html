@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html ng-app="EventApp">
+  <head>
+    <title> Pyblish </title>
+    <base href="/">
+
+    <!-- Bootstrap -->
+    <link 
+      rel="stylesheet"
+      href="static/lib/bootstrap/dist/css/bootstrap.min.css" />
+    
+    <!-- Application Stylesheet -->
+    <link 
+      rel="stylesheet"
+      href="static/css/app.css" />
+
+  </head>
+
+  <body>
+    <div class="container-fluid">
+
+      <!-- Navigation -->
+      <div ng-include="'static/includes/nav.html'"></div>
+
+      <!-- Main Body -->
+      <div ng-view></div>
+
+    </div>
+  
+    <!-- Dependencies -->
+    <script src="static/lib/jquery/dist/jquery.min.js"></script>
+    <script src="static/lib/angular/angular.min.js"></script>
+    <script src="static/lib/angular-route/angular-route.min.js"></script>
+    <script src="static/lib/angular-resource/angular-resource.min.js"></script>
+    <script src="static/lib/angular-messages/angular-messages.min.js"></script>
+    <script src="static/lib/angular-ui/ui-bootstrap-tpls-0.11.2.min.js"></script>
+  
+    <!-- Angular Application -->
+    <script src="static/js/app.js"></script>
+    <script src="static/js/controllers.js"></script>
+    <script src="static/js/services.js"></script>
+
+  </body>
+</html>

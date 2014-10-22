@@ -1,0 +1,12 @@
+<div>
+  <accordion close-others="true">
+    <h2>{{list.test}}</h2>
+    <div 
+      accordion-group
+      heading="{{group.title}}"
+      ng-repeat="group in list.model.groups | filter:list.model.query">
+      {{group.content}}
+    </div>
+
+  </accordion>
+</div>
