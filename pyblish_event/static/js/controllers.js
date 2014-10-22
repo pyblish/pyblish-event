@@ -12,9 +12,14 @@ function ListCtrl(searchModel, socket) {
 
     socket.on("connected", function (data) {
         // Initialise with data from server
-        console.log("Someone connected: " + data.whois);
+        console.log("Connected to: " + data.whois);
         console.log("And set events: " + data.events);
         searchModel.events = data.events;
+    });
+
+    socket.on("event", function (data) {
+        console.log("New data: " + data);
+        searchModel.events.push(data);
     });
 
     this.model = searchModel;

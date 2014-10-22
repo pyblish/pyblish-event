@@ -4,7 +4,7 @@
     <div 
       accordion-group
       heading="{{event.title}}"
-      ng-repeat="event in list.model.events | filter:list.model.query">
+      ng-repeat="event in list.model.events | reverse | filter:list.model.query">
       {{event.content}}
     </div>
 
