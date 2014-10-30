@@ -1,0 +1,23 @@
+// Global globalities
+
+
+.group:after
+  // Previously "clearfix"
+  clear: both
+  display: table
+  content: ""
+
+
+@mixin theme
+  // Overarching theme of boxes
+  background-color: $background-color
+  border: 1px solid $border-color
+  
+  // Central border radius
+  border-radius: $outer-radius
+
+  // Spacing inbetween inner elements, including inner boxes
+  padding: 3px
+
+  // Spacing between outer elements; i.e. central layout boxes
+  margin: 0 $margin $margin 0

@@ -1,0 +1,26 @@
+@import "global"
+@import "variables"
+
+footer
+  @include theme
+  clear: both
+  overflow: hidden
+  font-size: 0.85em
+  font-weight: 600
+  padding: 15px
+
+  ul
+    padding-right: 80px
+    float: left
+    line-height: 170%
+
+    li:first-child
+      padding-bottom: 5px
+      text-weight: bold
+      color: $header-color
+
+  a
+    transition: color ease-out 0.05s
+
+    &:hover
+      color: $hover-color

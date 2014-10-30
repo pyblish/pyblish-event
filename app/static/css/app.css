@@ -1,0 +1,215 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+.group:after {
+  clear: both;
+  display: table;
+  content: ""; }
+
+header {
+  margin-bottom: 15px;
+  margin-top: 15px; }
+
+.group:after {
+  clear: both;
+  display: table;
+  content: ""; }
+
+nav {
+  background-color: #f0f0f0;
+  border: 1px solid #d6d6d6;
+  border-radius: 5px;
+  padding: 3px;
+  margin: 0 15px 15px 0; }
+
+.group:after {
+  clear: both;
+  display: table;
+  content: ""; }
+
+aside {
+  float: left;
+  background-color: #f0f0f0;
+  border: 1px solid #d6d6d6;
+  border-radius: 5px;
+  padding: 3px;
+  margin: 0 15px 15px 0; }
+  aside .dropdown {
+    border: 1px solid #d6d6d6;
+    border-radius: 3px;
+    font-size: 0.85em;
+    font-weight: 600;
+    padding: 3px;
+    margin-bottom: 3px; }
+  aside .canvas {
+    border: 1px solid #d6d6d6;
+    border-radius: 3px;
+    line-height: 1.2em;
+    font-weight: 600;
+    font-size: 0.85em;
+    color: #898989;
+    padding: 3px;
+    margin-bottom: 3px; }
+    aside .canvas li:hover {
+      background-color: #d6d6d6; }
+  aside button {
+    width: 20px;
+    height: 20px; }
+
+.group:after {
+  clear: both;
+  display: table;
+  content: ""; }
+
+section {
+  background-color: #f0f0f0;
+  border: 1px solid #d6d6d6;
+  border-radius: 5px;
+  padding: 3px;
+  margin: 0 15px 15px 0;
+  overflow: hidden; }
+  section .canvas {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    max-height: 400px;
+    position: relative; }
+  section table {
+    width: 100%;
+    overflow: scroll;
+    border-radius: 5px; }
+  section td {
+    border-bottom: 1px solid #d6d6d6;
+    line-height: 1.3em;
+    padding: 3px; }
+  section tr {
+    transition: background-color ease-out 0.02s; }
+    section tr:hover {
+      border-radius: 3px;
+      background-color: #d6d6d6; }
+  section th {
+    font-size: 0.85em;
+    color: #898989;
+    line-height: 2em;
+    transition: color 0.2s; }
+    section th:hover {
+      color: #4b8fe2; }
+    section th tr, section th th {
+      border: none; }
+
+.group:after {
+  clear: both;
+  display: table;
+  content: ""; }
+
+footer {
+  background-color: #f0f0f0;
+  border: 1px solid #d6d6d6;
+  border-radius: 5px;
+  padding: 3px;
+  margin: 0 15px 15px 0;
+  clear: both;
+  overflow: hidden;
+  font-size: 0.85em;
+  font-weight: 600;
+  padding: 15px; }
+  footer ul {
+    padding-right: 80px;
+    float: left;
+    line-height: 170%; }
+    footer ul li:first-child {
+      padding-bottom: 5px;
+      text-weight: bold;
+      color: #898989; }
+  footer a {
+    transition: color ease-out 0.05s; }
+    footer a:hover {
+      color: #4b8fe2; }
+
+@media (min-width: 960px) {
+  .wrapper {
+    width: 960px; } }
+@media (max-width: 550px) {
+  aside {
+    display: none; } }
+body {
+  user-select: none;
+  cursor: default;
+  font-size: 90%; }
+
+a {
+  text-decoration: none;
+  color: #3a3a3a; }
+  a:visited {
+    color: #3a3a3a; }
+
+::-webkit-scrollbar {
+  width: 20px; }
+
+::-webkit-scrollbar-thumb {
+  border: 5px solid #f0f0f0;
+  background-color: #d6d6d6;
+  padding: 5px; }
+
+button {
+  background-color: #d6d6d6;
+  font: 1em "Courier New";
+  color: #898989;
+  outline: none;
+  border: none;
+  transition: background-color ease-out 0.1s; }
+  button:hover {
+    background-color: #e1e1e1; }
+
+.wrapper {
+  padding-left: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #3a3a3a;
+  font-family: "Open Sans" sans-serif;
+  font-size: 0.875em;
+  font-weight: 400;
+  transition: width ease-out 0.2s; }

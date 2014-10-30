@@ -1,0 +1,34 @@
+@import "global"
+@import "variables"
+
+
+aside
+  float: left
+  @include theme
+  
+  .dropdown
+    border: 1px solid $border-color
+    border-radius: $inner-radius
+    font-size: 0.85em
+    font-weight: 600
+    // color: $header-color
+    padding: 3px
+    margin-bottom: 3px
+
+  .canvas
+    border: 1px solid $border-color
+    border-radius: $inner-radius
+    // font-family: monospace
+    line-height: 1.2em
+    font-weight: 600
+    font-size: 0.85em
+    color: $header-color
+    padding: 3px
+    margin-bottom: 3px
+
+    li:hover
+      background-color: $border-color
+
+  button
+    width: 20px
+    height: 20px

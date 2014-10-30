@@ -1,0 +1,46 @@
+// Central area in which grid of events occur, along with
+// detailes regarding each event.
+
+@import "global"
+@import "variables"
+
+
+section
+  @include theme
+  overflow: hidden
+
+  .canvas
+    overflow-x: hidden
+    overflow-y: scroll
+    max-height: 400px
+    position: relative
+
+  table
+    width: 100%
+    overflow: scroll
+    border-radius: 5px
+
+  td
+    border-bottom: 1px solid $border-color
+    line-height: 1.3em
+    padding: 3px
+
+  tr
+    transition: background-color ease-out 0.02s
+
+    &:hover
+      border-radius: 3px
+      background-color: $border-color
+
+  th
+    font-size: 0.85em
+    color: $header-color
+    line-height: 2em
+
+    transition: color 0.2s
+
+    &:hover
+      color: $hover-color
+
+    tr, th
+      border: none

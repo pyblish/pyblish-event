@@ -1,0 +1,57 @@
+// @import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,600)
+@import "reset"
+@import "global"
+@import "variables"
+@import "header"
+@import "navigation"
+@import "sidebar"
+@import "main"
+@import "footer"
+@import "responsive"
+
+
+body
+  user-select: none
+  cursor: default
+  font-size: 90%
+
+a
+  text-decoration: none
+  color: $text-color
+  
+  &:visited
+    color: $text-color
+
+::-webkit-scrollbar
+  width: 20px
+
+::-webkit-scrollbar-thumb
+  border: 5px solid $background-color
+  background-color: $border-color
+  padding: 5px
+
+
+button
+  background-color: $border-color
+  font: 1em "Courier New"
+  color: $header-color
+  outline: none
+  border: none
+
+  transition: background-color ease-out 0.1s
+
+  &:hover
+    background-color: lighten($border-color, 4)
+
+
+.wrapper
+  padding-left: $margin
+  margin-left: auto
+  margin-right: auto
+
+  color: $text-color
+  font-family: "Open Sans" sans-serif
+  font-size: 0.875em
+  font-weight: 400
+
+  transition: width ease-out 0.2s
