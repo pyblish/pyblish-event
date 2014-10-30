@@ -1,0 +1,19 @@
+<aside class="group">
+  <div class="dropdown">Families</div>
+  <div class="canvas">
+    <select
+      multiple
+      size="10"
+      ng-model="filterCtrl.EventService.selectedFilters"
+      ng-options="event.family as event.family for event in filterCtrl.EventService.events | unique:'family' | filter:key">
+    </select>
+  </div>
+  <div class="input-group input-group-sm">
+    <span class="input-group-addon"><span class="glyphicon glyphicon-filter"></span></span>
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Filter.."
+      ng-model="key">
+  </div>
+</aside>

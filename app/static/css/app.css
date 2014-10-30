@@ -72,12 +72,15 @@ nav {
   content: ""; }
 
 aside {
-  float: left;
   background-color: #f0f0f0;
   border: 1px solid #d6d6d6;
   border-radius: 5px;
   padding: 3px;
-  margin: 0 15px 15px 0; }
+  margin: 0 15px 15px 0;
+  float: left;
+  width: 230px; }
+  aside .input-group {
+    clear: both; }
   aside .dropdown {
     border: 1px solid #d6d6d6;
     border-radius: 3px;
@@ -86,19 +89,60 @@ aside {
     padding: 3px;
     margin-bottom: 3px; }
   aside .canvas {
-    border: 1px solid #d6d6d6;
-    border-radius: 3px;
-    line-height: 1.2em;
+    min-height: 150px;
+    max-height: 500px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    line-height: 1.8em;
     font-weight: 600;
     font-size: 0.85em;
     color: #898989;
-    padding: 3px;
-    margin-bottom: 3px; }
-    aside .canvas li:hover {
-      background-color: #d6d6d6; }
+    margin-bottom: 3px;
+    transition: background-color ease-out 0.05s; }
+    aside .canvas select {
+      background: transparent;
+      font-weight: 600;
+      font-size: 1em;
+      appearance: none;
+      outline: none;
+      border: none;
+      width: 100%; }
+      aside .canvas select option {
+        padding: 3px; }
+        aside .canvas select option:active {
+          background: transparent; }
+        aside .canvas select option:checked {
+          background: linear-gradient(#8a8a8a, #8a8a8a); }
+    aside .canvas table {
+      min-width: 222px; }
+    aside .canvas table, aside .canvas tr, aside .canvas td, aside .canvas th {
+      border: none; }
+    aside .canvas td:hover {
+      background-color: #e8e8e8; }
+    aside .canvas td {
+      padding-left: 5px; }
+    aside .canvas td:first-child {
+      width: 3px;
+      padding-left: 0;
+      background-color: #787878; }
   aside button {
     width: 20px;
     height: 20px; }
+
+.filter-color-1 {
+  background-color: #e4cc4a; }
+
+.filter-color-2 {
+  background-color: #96c74c; }
+
+.filter-color-3 {
+  background-color: #76fc88; }
+
+.filter-color-4 {
+  background-color: #60f0de; }
+
+.filter-color-5 {
+  background-color: #6885f4; }
 
 .group:after {
   clear: both;
@@ -114,31 +158,30 @@ section {
   overflow: hidden; }
   section .canvas {
     overflow-x: hidden;
-    overflow-y: scroll;
-    max-height: 400px;
-    position: relative; }
+    overflow-y: auto;
+    max-height: 500px;
+    position: relative;
+    margin: 5px; }
   section table {
-    width: 100%;
-    overflow: scroll;
-    border-radius: 5px; }
+    width: 100%; }
   section td {
-    border-bottom: 1px solid #d6d6d6;
-    line-height: 1.3em;
+    line-height: 1.6em;
     padding: 3px; }
   section tr {
-    transition: background-color ease-out 0.02s; }
+    transition: background-color ease-out 0.05s; }
     section tr:hover {
-      border-radius: 3px;
-      background-color: #d6d6d6; }
+      background-color: #e8e8e8; }
+    section tr:first-child {
+      background-color: none; }
   section th {
+    text-transform: capitalize;
+    text-align: center;
     font-size: 0.85em;
     color: #898989;
     line-height: 2em;
     transition: color 0.2s; }
     section th:hover {
       color: #4b8fe2; }
-    section th tr, section th th {
-      border: none; }
 
 .group:after {
   clear: both;
@@ -153,7 +196,6 @@ footer {
   margin: 0 15px 15px 0;
   clear: both;
   overflow: hidden;
-  font-size: 0.85em;
   font-weight: 600;
   padding: 15px; }
   footer ul {
@@ -175,24 +217,52 @@ footer {
 @media (max-width: 550px) {
   aside {
     display: none; } }
+.input-group {
+  width: 200px; }
+
+section {
+  /* top-left border-radius */
+  /* top-right border-radius */
+  /* bottom-left border-radius */
+  /* bottom-right border-radius */ }
+  section table {
+    border-collapse: separate;
+    border-spacing: 0;
+    min-width: 350px; }
+  section tr th, section tr td {
+    border-right: 1px solid #d6d6d6;
+    border-bottom: 1px solid #d6d6d6; }
+  section tr th:first-child, section tr td:first-child {
+    border-left: 1px solid #d6d6d6; }
+  section tr th:first-child, section tr td:first-child {
+    border-left: 1px solid #d6d6d6; }
+  section tr th, section tr:first-child td {
+    border-top: 1px solid #d6d6d6; }
+  section tr:first-child th:first-child, section tr:first-child td:first-child {
+    border-top-left-radius: 3px; }
+  section tr:first-child th:last-child, section tr:first-child td:last-child {
+    border-top-right-radius: 3px; }
+  section tr:last-child td:first-child {
+    border-bottom-left-radius: 3px; }
+  section tr:last-child td:last-child {
+    border-bottom-right-radius: 3px; }
+
 body {
   user-select: none;
   cursor: default;
   font-size: 90%; }
+  body ::-webkit-scrollbar {
+    width: 20px; }
+  body ::-webkit-scrollbar-thumb {
+    border: 5px solid #f0f0f0;
+    background-color: #d6d6d6;
+    padding: 5px; }
 
 a {
   text-decoration: none;
   color: #3a3a3a; }
   a:visited {
     color: #3a3a3a; }
-
-::-webkit-scrollbar {
-  width: 20px; }
-
-::-webkit-scrollbar-thumb {
-  border: 5px solid #f0f0f0;
-  background-color: #d6d6d6;
-  padding: 5px; }
 
 button {
   background-color: #d6d6d6;
@@ -203,6 +273,16 @@ button {
   transition: background-color ease-out 0.1s; }
   button:hover {
     background-color: #e1e1e1; }
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("../font/OpenSans-Regular.ttf") format("truetype");
+  font-weight: 400; }
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("../font/OpenSans-Semibold.ttf") format("truetype");
+  font-weight: 600; }
 
 .wrapper {
   padding-left: 15px;

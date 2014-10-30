@@ -11,28 +11,30 @@ section
 
   .canvas
     overflow-x: hidden
-    overflow-y: scroll
-    max-height: 400px
+    overflow-y: auto
+    max-height: $max-height
     position: relative
+    margin: 5px
 
   table
     width: 100%
-    overflow: scroll
-    border-radius: 5px
 
   td
-    border-bottom: 1px solid $border-color
-    line-height: 1.3em
+    line-height: 1.6em
     padding: 3px
 
   tr
-    transition: background-color ease-out 0.02s
+    transition: background-color ease-out 0.05s
 
     &:hover
-      border-radius: 3px
-      background-color: $border-color
+      background-color: darken($background-color, 3)
+
+    &:first-child
+      background-color: none
 
   th
+    text-transform: capitalize
+    text-align: center
     font-size: 0.85em
     color: $header-color
     line-height: 2em
@@ -41,6 +43,3 @@ section
 
     &:hover
       color: $hover-color
-
-    tr, th
-      border: none

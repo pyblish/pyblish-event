@@ -1,34 +1,95 @@
 @import "global"
 @import "variables"
 
+$width: 230px
 
 aside
-  float: left
   @include theme
+  float: left
+  width: $width
+
+  .input-group
+    clear: both
   
   .dropdown
     border: 1px solid $border-color
     border-radius: $inner-radius
     font-size: 0.85em
     font-weight: 600
-    // color: $header-color
     padding: 3px
     margin-bottom: 3px
 
   .canvas
-    border: 1px solid $border-color
-    border-radius: $inner-radius
-    // font-family: monospace
-    line-height: 1.2em
+    min-height: 150px
+    max-height: $max-height
+    overflow-x: hidden
+    overflow-y: auto
+
+    line-height: 1.8em
     font-weight: 600
     font-size: 0.85em
     color: $header-color
-    padding: 3px
     margin-bottom: 3px
 
-    li:hover
-      background-color: $border-color
+    transition: background-color ease-out 0.05s
+
+    select
+      background: transparent
+      // line-height: 1.8em
+      font-weight: 600
+      font-size: 1em
+      appearance: none
+      outline: none
+      border: none
+      width: 100%
+
+      option
+        padding: 3px
+
+        &:active
+          background: transparent
+
+        &:checked
+          background: linear-gradient(darken($background-color, 40), darken($background-color, 40))
+
+    table
+      min-width: $width - 8
+
+    table, tr, td, th
+      border: none
+
+    // tr
+    //   line-height: 1.2
+  
+    td:hover
+      background-color: darken($background-color, 3)
+
+    td
+      // Adding some space between coloring and actual text
+      padding-left: 5px
+
+    td:first-child
+      // The color-group to the left of the text
+      width: 3px
+      padding-left: 0
+      background-color: #787878 // Default color
 
   button
     width: 20px
     height: 20px
+
+
+// Generate color-groups.
+// 
+// The resulting rules will look like this:
+// 
+// filter-color-1 {
+//   background-color: #96C74C
+// }
+
+$colors: #E4CC4A, #96C74C, #76FC88, #60F0DE, #6885F4
+
+@each $current-color in $colors
+  $i: index($colors, $current-color)
+  .filter-color-#{$i}
+    background-color: $current-color

@@ -1,0 +1,35 @@
+// Non-specific CSS
+
+body
+  user-select: none
+  cursor: default
+  font-size: 90%
+
+  ::-webkit-scrollbar
+    width: 20px
+
+  ::-webkit-scrollbar-thumb
+    border: 5px solid $background-color
+    background-color: $border-color
+    padding: 5px
+
+
+a
+  text-decoration: none
+  color: $text-color
+  
+  &:visited
+    color: $text-color
+
+
+button
+  background-color: $border-color
+  font: 1em "Courier New"
+  color: $header-color
+  outline: none
+  border: none
+
+  transition: background-color ease-out 0.1s
+
+  &:hover
+    background-color: lighten($border-color, 4)
