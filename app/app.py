@@ -8,6 +8,10 @@ app.route("/", defaults={"p": ""})(routes.home.route)
 app.route("/<path:p>")(routes.home.route)
 
 
-if __name__ == "__main__":
+def main():
     os.environ["DEVELOP"] = "true"
     app.run(debug=True)
+
+
+if __name__ == "__main__":
+    main()
