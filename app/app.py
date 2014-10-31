@@ -1,35 +1,34 @@
 # Standard library
 import os
-import platform
 
 # Dependencies
 import flask
+import flask.ext.restful
 import flask.ext.socketio
 
 # Local library
+import com
 import routes.home
 
 
 # App
 app = flask.Flask(__name__)
 app.route("/", defaults={"p": ""})(routes.home.route)
-app.route("/<path:p>")(routes.home.route)
+app.route("/<path:p>")(routes.home.route)  # All paths route to index.html
 
 
 # Socket.io
 socketio = flask.ext.socketio.SocketIO(app)
+socketio.on("connect", namespace="/default")(com.connect)
 
 
-@socketio.on("connect", namespace="/default")
-def connect():
-    # Return hostname of computer running Flask upon connecting
-    flask.ext.socketio.emit("connected", platform.node())
+# RESTful API
+api = flask.ext.restful.Api(app)
 
 
 def debug(app):
     os.environ["DEVELOP"] = "true"
     app.debug = True
-    # return app.run()
     return socketio.run(app)
 
 
