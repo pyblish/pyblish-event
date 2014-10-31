@@ -17,10 +17,13 @@ def api(socket):
 
             event_str = flask.request.stream.read()
             event = json.loads(event_str)
-            event['id'] = unique_id
+            event["id"] = unique_id
 
-            if not 'date' in event:
-                event['date'] = time.time()
+            if not "date" in event:
+                event["date"] = time.time()
+
+            if not "family" in event:
+                event["family"] = "nofamily"
 
             socket.emit("event",
                         event,
