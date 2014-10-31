@@ -4,10 +4,10 @@
       <tr>
         <th ng-repeat="section in eventCtrl.sections">{{ section }}</th>
       </tr>
-      <tr ng-repeat="event in eventCtrl.EventService.events
+      <tr ng-repeat="event in eventCtrl.eventService.events
                      | limitTo: 30
-                     | filter: { instance: eventCtrl.EventService.query }
-                     | filter: { family: eventCtrl.EventService.selectedFilters }">
+                     | filter: { instance: eventCtrl.eventService.query }
+                     | filter: { family: eventCtrl.eventService.selectedFilters }">
         <td ng-repeat="section in eventCtrl.sections">{{ event[section] }}</td>
       </tr>
     </table>

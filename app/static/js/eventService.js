@@ -51,7 +51,8 @@
     * Shared model across Main Body and Navigation
     * for search queries.
     */
-    function EventService() {
+    function eventService() {
+        
         return {
             key: "", // Shared key, modified by top-level navigation
             selectedFilters: [],  // Currently selected filters in the sidebar
@@ -60,6 +61,6 @@
     }
 
 
-    app.factory("EventService", EventService);
+    app.factory("eventService", eventService);
 
 }());

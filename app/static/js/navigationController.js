@@ -5,8 +5,8 @@
 (function () {
     var app = angular.module("pyblishApp");
 
-    app.controller("NavigationController", function (EventService) {
-        this.EventService = EventService;
+    app.controller("NavigationController", function (eventService) {
+        this.eventService = eventService;
     });
 
 }());

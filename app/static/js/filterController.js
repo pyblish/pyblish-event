@@ -5,9 +5,9 @@
 (function () {
     var app = angular.module("pyblishApp");
 
-    app.controller("FilterController", function (EventService) {
+    app.controller("FilterController", function (eventService) {
         this.key = "";
-        this.EventService = EventService;
+        this.eventService = eventService;
     });
 
 }());

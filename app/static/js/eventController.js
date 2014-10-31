@@ -7,10 +7,16 @@
 
     var app = angular.module("pyblishApp");
 
-    app.controller("EventController", function (EventService) {
+    app.controller("EventController", function (eventService, socketIo) {
+
+        // Emitted by Flask upon first connect.
+        socketIo.on("connected", function (data) {
+            console.log("Connected to " + data);
+        });
+
         this.sections = ["instance", "comment", "author", "date"];
-        this.events = EventService.events;
-        this.EventService = EventService;
+        this.events = eventService.events;
+        this.eventService = eventService;
     });
 
 }());
