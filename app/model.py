@@ -1,13 +1,16 @@
+import os
 import pymongo
 
+MONGO_URL = os.environ.get('MONGOHQ_URL')
+
 try:
-    client = pymongo.MongoClient()
+    client = pymongo.MongoClient(MONGO_URL)
 except:
     # This will get output in the terminal is a user
     # should try and launch without having installed Mongo
     raise ValueError("MongoDB must be installed")
 
-db = client.pyblish_database
+db = getattr(client, "app31128273")
 events = db.events
 excludes = {"_id": False}
 
