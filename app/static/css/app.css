@@ -65,6 +65,11 @@ nav {
   border-radius: 5px;
   padding: 3px;
   margin: 0 15px 15px 0; }
+  nav .input-group {
+    width: 200px;
+    float: left; }
+  nav #max-results {
+    width: 100px; }
 
 .group:after {
   clear: both;
@@ -80,7 +85,8 @@ aside {
   float: left;
   width: 230px; }
   aside .input-group {
-    clear: both; }
+    clear: both;
+    width: 200px; }
   aside .dropdown {
     border: 1px solid #d6d6d6;
     border-radius: 3px;
@@ -149,6 +155,22 @@ aside {
   display: table;
   content: ""; }
 
+@keyframes openSpace {
+  from {
+    font-size: 0; }
+
+  to {
+    font-size: 100%; } }
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px); }
+
+  to {
+    opacity: 1;
+    transform: translateY(0px); } }
+
 section {
   background-color: #f0f0f0;
   border: 1px solid #d6d6d6;
@@ -166,9 +188,14 @@ section {
     width: 100%; }
   section td {
     line-height: 1.6em;
-    padding: 3px; }
+    padding: 3px;
+    padding-left: 5px; }
+    section td span {
+      opacity: 0;
+      transition: background-color ease-out 0.05s;
+      animation: slideIn 0.2s ease-out 0.2s forwards; }
   section tr {
-    transition: background-color ease-out 0.05s; }
+    animation: openSpace 0.2s ease forwards; }
     section tr:hover {
       background-color: #e8e8e8; }
     section tr:first-child {
@@ -182,6 +209,18 @@ section {
     transition: color 0.2s; }
     section th:hover {
       color: #4b8fe2; }
+  section .ng-move,
+  section .ng-enter,
+  section .ng-leave {
+    transition: all linear 0.5s; }
+  section .ng-leave.ng-leave-active,
+  section .ng-move,
+  section .ng-enter {
+    opacity: 0; }
+  section .ng-leave,
+  section .ng-move.ng-move-active,
+  section .ng-enter.ng-enter-active {
+    opacity: 1; }
 
 .group:after {
   clear: both;
@@ -217,9 +256,6 @@ footer {
 @media (max-width: 550px) {
   aside {
     display: none; } }
-.input-group {
-  width: 200px; }
-
 section {
   /* top-left border-radius */
   /* top-right border-radius */

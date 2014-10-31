@@ -4,8 +4,8 @@
     <select
       multiple
       size="10"
-      ng-model="filterCtrl.eventService.selectedFilters"
-      ng-options="event.family as event.family for event in filterCtrl.eventService.events | unique:'family' | filter:key">
+      ng-model="filterCtrl.model.selectedFilters"
+      ng-options="event.family as event.family for event in filterCtrl.model.events | unique:'family' | filter:key">
     </select>
   </div>
   <div class="input-group input-group-sm">
@@ -14,6 +14,10 @@
       type="text"
       class="form-control"
       placeholder="Filter.."
+
+      tooltip-placement="top"
+      tooltip="Filter filters"
+
       ng-model="key">
   </div>
 </aside>

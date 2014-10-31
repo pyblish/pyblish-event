@@ -1,10 +1,30 @@
-<nav>
+<nav class="group">
   <div class="input-group input-group-sm">
     <span class="input-group-addon"><span class="glyphicon glyphicon-filter"></span></span>
     <input
-        type="text"
-        class="form-control"
+        ng-model="navCtrl.model.query"
         placeholder="Filter events.."
-        ng-model="navCtrl.eventService.query">
+        class="form-control"
+
+        tooltip-placement="top"
+        tooltip="Filter results"
+
+        type="text">
+  </div>
+
+  <div
+    class="input-group input-group-sm pull-right"
+    id="max-results">
+    <span class="input-group-addon"><span class="glyphicon glyphicon-fire"></span></span>
+    <input
+      ng-model="navCtrl.model.maxResults"
+      value="navCtrl.model.maxResults"
+      placeholder="Max results.."
+      class="form-control"
+      
+      tooltip-placement="top"
+      tooltip="Max results"
+      
+      type="number">
   </div>
 </nav>

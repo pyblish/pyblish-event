@@ -1,22 +1,30 @@
 "use strict";
 /*global angular*/
-/*global events*/
 
 
 (function () {
 
     var app = angular.module("pyblishApp");
 
-    app.controller("EventController", function (eventService, socketIo) {
-
-        // Emitted by Flask upon first connect.
-        socketIo.on("connected", function (data) {
-            console.log("Connected to " + data);
-        });
+    app.controller("EventController", function (eventModel, socketIo) {
 
         this.sections = ["instance", "comment", "author", "date"];
-        this.events = eventService.events;
-        this.eventService = eventService;
-    });
+        this.model = eventModel;
 
+        // Emitted by Flask upon first connect.
+        socketIo.on("connected", function (host) {
+            console.log("Connected to " + host);
+        });
+
+        // Emitted upon first connect, and carries relevant initial data
+        socketIo.on("init", function (data) {
+            eventModel.initEvents(data.events);
+        });
+
+        // Emitted upon receiving a new event
+        socketIo.on("event", function (event) {
+            eventModel.addEvent(event);
+        });
+
+    });
 }());

@@ -8,9 +8,10 @@
 
     var app = angular.module("pyblishApp", ["ngRoute",
                                             "ui.utils",
+                                            "ui.bootstrap",
                                             "btford.socket-io"]);
 
-    // Socket.io support
+    // Socket.io support, from btford.socket-io
     app.factory('socketIo', function (socketFactory) {
         return socketFactory({
             ioSocket: io.connect("/default")
