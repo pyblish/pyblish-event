@@ -37,48 +37,33 @@ section
   table
     width: 100%
 
-  td
-    line-height: 1.6em
-    padding: 3px
-    padding-left: 5px  // Distance from cell-border to text
-  
-    span
-      opacity: 0
-      transition: background-color ease-out 0.05s
-      animation: slideIn 0.2s ease-out 0.2s forwards
+    tr
+      animation: openSpace 0.2s ease forwards
 
-  tr
-    animation: openSpace 0.2s ease forwards
+      &:hover
+        background-color: darken($background-color, 3)
 
-    &:hover
-      background-color: darken($background-color, 3)
+      &:first-child
+        background-color: none
 
-    &:first-child
-      background-color: none
+      td
+        line-height: 1.6em
+        padding: 3px
+        padding-left: 5px  // Distance from cell-border to text
+      
+        span
+          opacity: 0
+          transition: background-color ease-out 0.05s
+          animation: slideIn 0.2s ease-out 0.2s forwards
 
-  th
-    text-transform: capitalize
-    text-align: center
-    font-size: 0.85em
-    color: $header-color
-    line-height: 2em
+      th
+        text-transform: capitalize
+        text-align: center
+        font-size: 0.85em
+        color: $header-color
+        line-height: 2em
 
-    transition: color 0.2s
+        transition: color 0.2s
 
-    &:hover
-      color: $hover-color
-
-  .ng-move,
-  .ng-enter,
-  .ng-leave
-    transition: all linear 0.5s
-
-  .ng-leave.ng-leave-active,
-  .ng-move,
-  .ng-enter
-    opacity: 0
-
-  .ng-leave,
-  .ng-move.ng-move-active,
-  .ng-enter.ng-enter-active
-    opacity: 1
+        &:hover
+          color: $hover-color

@@ -18,7 +18,7 @@
 
         // Emitted upon first connect, and carries relevant initial data
         socketIo.on("init", function (data) {
-            eventModel.initEvents(data.events);
+            eventModel.initEvents(data);
         });
 
         // Emitted upon receiving a new event

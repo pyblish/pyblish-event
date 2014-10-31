@@ -186,41 +186,29 @@ section {
     margin: 5px; }
   section table {
     width: 100%; }
-  section td {
-    line-height: 1.6em;
-    padding: 3px;
-    padding-left: 5px; }
-    section td span {
-      opacity: 0;
-      transition: background-color ease-out 0.05s;
-      animation: slideIn 0.2s ease-out 0.2s forwards; }
-  section tr {
-    animation: openSpace 0.2s ease forwards; }
-    section tr:hover {
-      background-color: #e8e8e8; }
-    section tr:first-child {
-      background-color: none; }
-  section th {
-    text-transform: capitalize;
-    text-align: center;
-    font-size: 0.85em;
-    color: #898989;
-    line-height: 2em;
-    transition: color 0.2s; }
-    section th:hover {
-      color: #4b8fe2; }
-  section .ng-move,
-  section .ng-enter,
-  section .ng-leave {
-    transition: all linear 0.5s; }
-  section .ng-leave.ng-leave-active,
-  section .ng-move,
-  section .ng-enter {
-    opacity: 0; }
-  section .ng-leave,
-  section .ng-move.ng-move-active,
-  section .ng-enter.ng-enter-active {
-    opacity: 1; }
+    section table tr {
+      animation: openSpace 0.2s ease forwards; }
+      section table tr:hover {
+        background-color: #e8e8e8; }
+      section table tr:first-child {
+        background-color: none; }
+      section table tr td {
+        line-height: 1.6em;
+        padding: 3px;
+        padding-left: 5px; }
+        section table tr td span {
+          opacity: 0;
+          transition: background-color ease-out 0.05s;
+          animation: slideIn 0.2s ease-out 0.2s forwards; }
+      section table tr th {
+        text-transform: capitalize;
+        text-align: center;
+        font-size: 0.85em;
+        color: #898989;
+        line-height: 2em;
+        transition: color 0.2s; }
+        section table tr th:hover {
+          color: #4b8fe2; }
 
 .group:after {
   clear: both;

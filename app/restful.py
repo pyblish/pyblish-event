@@ -1,6 +1,8 @@
 import json
-import flask.ext.restful
 import uuid
+import time
+
+import flask.ext.restful
 
 import model
 
@@ -13,16 +15,18 @@ def api(socket):
         def post(self):
             unique_id = str(uuid.uuid4())
 
-            event = flask.request.stream.read()
-            event_json = json.loads(event)
-            event_json['id'] = unique_id
+            event_str = flask.request.stream.read()
+            event = json.loads(event_str)
+            event['id'] = unique_id
 
-            # model.data.append(event_json)
+            if not 'date' in event:
+                event['date'] = time.time()
 
-            print "Emitting %s" % event_json
             socket.emit("event",
-                        event_json,
+                        event,
                         namespace="/default")
+
+            model.add_event(event)
 
             return unique_id
 
