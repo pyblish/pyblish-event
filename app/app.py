@@ -1,5 +1,3 @@
-# Standard library
-import os
 
 # Dependencies
 import flask
@@ -8,7 +6,7 @@ import flask.ext.socketio
 
 # Local library
 import com
-import restful
+import rest
 import routes.home
 
 
@@ -25,11 +23,11 @@ socket.on("connect", namespace="/default")(com.connect)
 
 # RESTful
 api = flask.ext.restful.Api(app)
-api.add_resource(restful.api(socket=socket), "/api")
+api.add_resource(type("Api", (rest.api(socket=socket),), {}), "/api")
+api.add_resource(type("Event", (rest.api(socket=socket),), {}), "/event")
 
 
 def debug(app):
-    # os.environ["DEVELOP"] = "true"
     app.debug = True
     return socket.run(app)
 
