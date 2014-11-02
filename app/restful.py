@@ -10,7 +10,7 @@ import model
 def api(socket):
     class Api(flask.ext.restful.Resource):
         def get(self):
-            return model.data
+            return model.all_events()
 
         def post(self):
             unique_id = str(uuid.uuid4())
