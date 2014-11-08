@@ -16,7 +16,7 @@ Event supports posting new events as JSON formatted documents via standard POST 
 import json
 import requests
 
-url = "http://event.pyblish.com/api"  # Note the `/api` suffix
+url = "http://event.pyblish.com/event"  # Note the `/event` suffix
 headers = {"content-type": "application/json"}  # We're sending JSON data
 payload = {
     "instance": "MyFirstInstance01",
@@ -25,7 +25,7 @@ payload = {
     "family": "marcus.family"
 }
 
-# Before you send, pop up Events and notice the event appear in real-time!
+# Before you send, pop up Pyblish Event and notice the event appear in real-time!
 
 # Now send!
 requests.post(url,
@@ -33,6 +33,8 @@ requests.post(url,
               headers=headers)
 
 ```
+
+If you install locally, the URL above will instead point to your local server.
 
 ### Local Installation
 
