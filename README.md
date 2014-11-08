@@ -52,6 +52,8 @@ $ pip install -r requirements.txt
 ```
 
  Also install [MongoDB][mongo]
+ 
+ - [Having trouble?](#faq)
 
  [mongo]: http://docs.mongodb.org/manual/installation
 
@@ -69,3 +71,19 @@ At first, there won't be any events, as your new Mongo collection is empty. But 
 
 [demo]: http://event.pyblish.com/
 [image]: https://cloud.githubusercontent.com/assets/2152766/4826577/bc8aef62-5f71-11e4-97c9-0ff197212edc.png
+
+### FAQ
+
+> VCVARSALL.bat / I can't install the requirements.
+
+This is due to a limitation in one of the requirements; Gevent. Gevent requires that you compile the library and compilation on Windows typically requires an installaton of Visual Studio. To circumvent this, install a pre-compiled binary from here.
+
+- http://www.lfd.uci.edu/~gohlke/pythonlibs/#gevent
+
+Then re-run the installation of requirements, which will pick up from where it left off.
+
+> MongoDB must be installed
+
+You may have installed it, but not started it. In a nutshell, MongoDB needs to be running as a dedicated process on the computer hosting the database. On Ubuntu, this process may happen automatically upon installation, but on Windows you may have to perform an extra step. Make sure you follow through these steps.
+
+- http://docs.mongodb.org/manual/tutorial/install-mongodb-on-windows/
