@@ -12,6 +12,8 @@ An intranet frontend for real-time updates of Pyblish events.
 
 Event supports posting new events as JSON formatted documents via standard POST requests.
 
+> Note that the following example uses the [Requests library][requests], which may be installed via PyPI.
+
 ```python
 import json
 import requests
@@ -35,6 +37,8 @@ requests.post(url,
 ```
 
 If you install locally, the URL above will instead point to your local server.
+
+[requests]: http://docs.python-requests.org/en/latest/
 
 ### Local Installation
 
@@ -78,9 +82,16 @@ At first, there won't be any events, as your new Mongo collection is empty. But 
 
 > VCVARSALL.bat / I can't install the requirements.
 
-This is due to a limitation in one of the requirements; Gevent. Gevent requires that you compile the library and compilation on Windows typically requires an installaton of Visual Studio. To circumvent this, install a pre-compiled binary from here.
+This is due to a limitation in one of the requirements; Gevent. Gevent requires that you compile the library and compilation on Windows typically requires an installaton of Visual Studio. To circumvent this, you have two options.
 
-- http://www.lfd.uci.edu/~gohlke/pythonlibs/#gevent
+1. Install a pre-compiled binary from here.
+
+ - http://www.lfd.uci.edu/~gohlke/pythonlibs/#gevent
+
+2. Install a compiler for Python to use when being tasked with compiling Gevent.
+
+ - http://www.microsoft.com/en-us/download/confirmation.aspx?id=44266
+ - Next, make sure you update setuptools to 6.0, as the compiler will not be picked up otherwise.
 
 Then re-run the installation of requirements, which will pick up from where it left off.
 
