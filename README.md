@@ -1,5 +1,3 @@
-[![][image]][demo]
-
 ## Pyblish Event
 
 An intranet frontend for real-time updates of Pyblish events.
@@ -76,7 +74,6 @@ $ python app/app.py
 At first, there won't be any events, as your new Mongo collection is empty. But you can add some via the API, see above.
 
 [demo]: http://event.pyblish.com/
-[image]: https://cloud.githubusercontent.com/assets/2152766/4826577/bc8aef62-5f71-11e4-97c9-0ff197212edc.png
 
 ### FAQ
 
